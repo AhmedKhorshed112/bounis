@@ -1,0 +1,20 @@
+#include <stack>
+#include <string>
+
+bool is_palindrome(std::string string) {
+  
+  std::stack<char> stack;
+  
+  for (char ch : string) {
+    stack.push(ch);
+  }
+  
+  std::string reversed_string = "";
+  
+  while (!stack.empty()) {
+    reversed_string += stack.top();
+    stack.pop();
+  }
+  
+  return string == reversed_string;
+}
